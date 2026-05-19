@@ -4,8 +4,8 @@ const projects = [
     image: 'img/creator-candidates.gif',
     alt: 'Candidate social media following chart',
     description:
-      "I worked with Media Trends Executive team to create an interactive graphic from their data about potential presidential candidates' social media followers.",
-    outlet: '($) Axios',
+      "I worked with the Media Trends Executive team to create an interactive graphic from their data about potential presidential candidates' social media followers.",
+    outlet: 'Axios($)',
     url: 'https://www.axios.com/media-trends-membership/2026/05/09/2028-potential-candidates-creator-media',
   },
   {
@@ -36,13 +36,13 @@ const projects = [
     url: 'https://www.rollcall.com/2020/03/10/where-the-money-is-what-phoenix-tucson-area-fundraising-says-about-the-arizona-senate-race/',
   },
   {
-    title: 'How the coronavirus pandemic changed mobility habits, by state',
-    image: 'img/mobility-ridges.png',
-    alt: 'Mobility ridgeline plot',
+    title: 'Wealth of billionaires, by country',
+    image: 'img/billionaires.png',
+    alt: 'Treemap of billionaire wealth',
     description:
-      "An interactive ridgeline plot shows Americans' movements (or lack of movement) from March through July, 2020.",
+      'I used ai2html to create a simple treemap showing data from the Billionaire Census 2025 for a chart published in Axios AM.',
     outlet: 'Axios',
-    url: 'https://www.axios.com/2020/07/08/coronavirus-mobility-habits-by-state',
+    url: 'https://www.axios.com/newsletters/axios-am-d4fa9332-d184-4974-8d37-d099854fee6d.html',
   },
   {
     title: 'Abortions could require 200-mile trips if Roe is overturned',
