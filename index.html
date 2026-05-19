@@ -1,161 +1,29 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sara Wise</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sara Wise, visual journalist — graphics and data visualization for journalism">
+  <title>Sara Wise</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <div class="container header">
-        <p>Sara Wise, visual journalist</p>
-    </div>
-    <div class="container title">
-        <p> I make graphics for journalism. </a>
-    </div>
-        <div class="container">
-        <div class="card-deck">
-            <div class="card">
-                <h5 class="card-title">Beyoncé's Cowboy Carter ticket prices keep changing, fans say</h5>
-                <img class="card-img-top" src="img/bey.png" alt="Beyoncé ticket prices chart">
-                <div class="card-body">
-                    <p class="card-text">I pitched and published a visual story showing the distribution of ticket prices reported by redditors in r/Beyoncé ahead of the Cowboy Carter Tour</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">See on <a
-                            href="https://www.axios.com/2025/02/14/beyonce-ticketmaster-cowboy-carter-seatgeek"
-                            target="blank">Axios</a></small>
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-title">Is the MCU becoming more diverse?</h5>
-                <img class="card-img-top" src="img/mcu.png" alt="Screenshot of MCU project">
-                <div class="card-body">
-                    <a class="card-text">I pitched, managed and reported a massive illustrated visual story project studies diversity in the MCU using custom illustrations and charts.</a>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">See on <a
-                            href="https://www.axios.com/marvel-cinematic-universe-diversity"
-                            target="blank">Axios</a></small>
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-title">The wait between major video game sequels is getting longer</h5>
-                <img class="card-img-top" src="img/gaming.png" alt="Gaming story chart">
-                <div class="card-body">
-                    <p class="card-text">I collaborated with a Visuals colleague and Gaming reporter Stephen Totilo to show visually that video game sequels are taking longer to release.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">See on <a
-                            href="https://www.axios.com/2023/08/11/video-game-sequels-wait"
-                            target="blank">Axios</a></small>
+  <div class="header">Sara Wise, visual journalist</div>
+  <div class="subtitle">I make graphics for journalism.</div>
+  <div class="grid" id="grid"></div>
 
-                </div>
-            </div>
+  <script src="data.js"></script>
+  <script>
+    document.getElementById('grid').innerHTML = projects.map(p => `
+      <div class="card">
+        <img src="${p.image}" alt="${p.alt}">
+        <h5 class="card-title">${p.title}</h5>
+        <p class="card-body">${p.description}</p>
+        <div class="card-footer">
+          <small>See on <a href="${p.url}" target="_blank" rel="noopener noreferrer">${p.outlet}</a></small>
         </div>
-    </div>
-    <div class="bumper"></div>
-    <div class="container">
-        <div class="card-deck">
-            <div class="card">
-                <h5 class="card-title">Does fundraising predict Arizona's Senate winner?</h5>
-                <img class="card-img-top" src="img/arizona.png" alt="Arizona fundraising chart">
-                <div class="card-body">
-                    <p class="card-text">In collaboration with a colleague, I used R to cull data from the FEC API.
-                        Then, we wrote about our findings and I visualized the data in maps and bar charts. </p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">See on <a
-                            href="https://www.rollcall.com/2020/03/10/where-the-money-is-what-phoenix-tucson-area-fundraising-says-about-the-arizona-senate-race/"
-                            target="blank">Roll Call</a></small>
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-title">How the coronavirus pandemic changed mobility habits, by state</h5>
-                <img class="card-img-top" src="img/mobility-ridges.png" alt="Mobility ridgeline plot">
-                <div class="card-body">
-                    <a class="card-text">An interactive ridgeline plot shows Americans' movements (or lack of movement)
-                        from March through July, 2020.</a>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">See on <a
-                            href="https://www.axios.com/2020/07/08/coronavirus-mobility-habits-by-state"
-                            target="blank">Axios</a></small>
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-title">Abortions could require 200-mile trips if Roe is overturned</h5>
-                <img class="card-img-top" src="img/abortion.png" alt="Distance to abortion map">
-                <div class="card-body">
-                    <p class="card-text">A Visuals colleague and I were among the first reporters to use this data source to create an interactive map charting travel distance to abortion care, which became a go-to resource for many other outlets.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">See on <a href="https://www.axios.com/2021/12/01/distance-abortion-roe-supreme-court-texas" target="blank">Axios</a></small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bumper"></div>
-    <div class="container">
-        <div class="card-deck">
-            <div class="card">
-                <h5 class="card-title">Intern Pay</h5>
-                <img class="card-img-top" src="img/interns.png" alt="Hillterns chart">
-                <div class="card-body">
-                    <p class="card-text">Static graphics showing which Senate offices pay interns, created using Tableau
-                        and Adobe Illustrator.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">See on <a
-                            href="https://www.rollcall.com/2018/04/20/new-push-for-senators-to-pay-their-interns/"
-                            target="blank">Roll Call</a></small>
-                </div>
-            </div>
-
-            <div class="card">
-                <h5 class="card-title">Axios Halloween bracket</h5>
-                <img class="card-img-top" src="img/cryptid.png" alt="Cryptid bracket preview">
-                <div class="card-body">
-                    <p class="card-text">For Halloween 2023, I designed and ran a bracket for readers to vote on their favorite cryptids, depicted in hand-drawn illustrations from our Visuals team. </p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">See on <a
-                            href="https://www.axios.com/2023/10/20/halloween-2023-mythical-creatures"
-                            target="blank">Axios</a></small>
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-title">Cashing in on justice</h5>
-                <img class="card-img-top" src="img/justice.png" alt="Judiciary Committee donations chart">
-                <div class="card-body">
-                    <p class="card-text">Responsive bar charts show judicial nominees who were eventually confirmed made
-                        sizable donations to the Senate Judiciary Committee and its members.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">See on <a
-                            href="https://www.rollcall.com/2020/03/03/cashing-in-on-justice/" target="blank">Roll
-                            Call</a></small>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-
+      </div>
+    `).join('');
+  </script>
 </body>
-
 </html>
