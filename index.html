@@ -1,29 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sara Wise, visual journalist — graphics and data visualization for journalism">
-  <title>Sara Wise</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="header">Sara Wise, visual journalist</div>
-  <div class="subtitle">I make graphics for journalism.</div>
-  <div class="grid" id="grid"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Sara Wise, visual journalist — graphics and data visualization for journalism"
+    />
+    <title>Sara Wise</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="header">Sara Wise, visual journalist</div>
+    <div class="subtitle">
+      I make graphics for journalism. <br />Previously, I shot and edited
+      <a href="https://500px.com/p/sarawise" target="_blank">photos</a> and
+      <a href="https://www.youtube.com/watch?v=W1JfICBNGwc" target="_blank"
+        >video</a
+      >
+      as well as well.
+    </div>
+    <div class="grid" id="grid"></div>
 
-  <script src="data.js"></script>
-  <script>
-    document.getElementById('grid').innerHTML = projects.map(p => `
-      <div class="card">
-        <img src="${p.image}" alt="${p.alt}">
-        <h5 class="card-title">${p.title}</h5>
-        <p class="card-body">${p.description}</p>
-        <div class="card-footer">
-          <small>See on <a href="${p.url}" target="_blank" rel="noopener noreferrer">${p.outlet}</a></small>
-        </div>
-      </div>
-    `).join('');
-  </script>
-</body>
+    <script>
+      fetch('data.json')
+        .then((r) => r.json())
+        .then((projects) => {
+          document.getElementById('grid').innerHTML = projects
+            .map(
+              (p) => `
+          <div class="card">
+            <img src="${p.image}" alt="${p.alt}">
+            <h5 class="card-title">${p.title}</h5>
+            <p class="card-body">${p.description}</p>
+            <div class="card-footer">
+              <small>See on <a href="${p.url}" target="_blank" rel="noopener noreferrer">${p.outlet}</a></small>
+            </div>
+          </div>
+        `,
+            )
+            .join('');
+        });
+    </script>
+  </body>
 </html>
